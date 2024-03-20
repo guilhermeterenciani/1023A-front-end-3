@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="minha-div" id="id-div">Minha div</div>
+    <div class="minha-div" id="id-div1">Minha div</div>
+    <script>
+        //let elemento = document.getElementById("id-div");
+        let elemento = document.getElementsByTagName("div")[1];
+        console.log(elemento);
+        elemento.style.color="rgb(0,0,68,0.9)";
+    </script>
+</body>
+</html>
