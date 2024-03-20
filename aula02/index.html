@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            margin: 0px;
+        }
         .minha-div{
             border: 1px solid red;
         }
@@ -17,8 +20,27 @@
         let elemento = document.getElementById("id-div");
         let elemento1 = document.getElementsByTagName("div")[0];
         let elemento2 = document.getElementsByClassName("minha-div")[1]
-        console.log(elemento);
+        
+
+        elemento.innerHTML = "Mudando DIV"
+        //Mude o texto da div2 para "Mudando DIV2"
+        elemento2.innerHTML = "<div class='nova-class'><h1>Mudando DIV3</h1></div>";
+        let novaDiv = document.getElementsByClassName("nova-class")[0];
+        novaDiv.id="novo-id";
+
+        //Mudando propriedades de estilo.
         elemento.style.color="rgb(0,0,68,0.9)";
+        elemento.style.height="50px";
+        elemento.style.backgroundColor="lightblue";
+
+        //Criar elementos
+        let novoLink = document.createElement("a");
+        novoLink.href="https://www.google.com";
+        novoLink.innerHTML = "Link Google";
+        //Adicionar o remover elementos de outros elementos
+
+        elemento.appendChild(novoLink);
+
     </script>
 </body>
 </html>
