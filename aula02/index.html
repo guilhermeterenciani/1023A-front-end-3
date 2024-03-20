@@ -40,6 +40,23 @@
         //Adicionar o remover elementos de outros elementos
 
         elemento.appendChild(novoLink);
+        elemento.removeChild(novoLink);
+
+        //Buscar o body
+        //remover a segunda div dele.
+
+        //click
+
+        elemento.onclick= function(){
+            console.log("Click div")
+            elemento.style.backgroundColor="red";
+        }
+
+        elemento.addEventListener('click',function(){
+            console.log("Click div2")
+            elemento.style.backgroundColor="red";
+        })
+
 
     </script>
 </body>
