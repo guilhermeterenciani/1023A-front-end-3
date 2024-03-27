@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+    <script>
+        let box = document.querySelector('.box');
+        box.addEventListener('click', function(){
+            box.style.backgroundColor = 'red';
+            let width = window.innerWidth - 100;
+            let height = window.innerHeight - 100;
+            box.style.left = Math.random() * width + 'px';
+            box.style.top = Math.random() * height + 'px';
+            box.innerHTML = "<p>Guilherme</p>";
+        });
+    </script>
+</body>
+</html>
