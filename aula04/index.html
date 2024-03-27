@@ -10,5 +10,16 @@
         <input type="text" name="texto" id="id-text">
         <button type="button" id="id-button">Mostrar</button>
     </main>
+    <script>
+        let input = document.getElementById('id-text');
+        let button = document.getElementById("id-button");
+
+        //button.onclick = function(){}
+        button.addEventListener('click',function(){
+            console.log(input.value)
+            input.value = '';
+        })
+
+    </script>
 </body>
 </html>
