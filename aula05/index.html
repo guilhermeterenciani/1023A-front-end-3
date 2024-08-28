@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Bolinha!</title>
+    <style>
+        body {
+            position: fixed;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(https://img.nsctotal.com.br/wp-content/uploads/2023/10/Ceu-Azul.jpg);
+            overflow: hidden;
+            background-size: 100%;
+        }
+        #jogador {
+            background-color: rgb(245, 245, 0);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0; 
+            left: 0; 
+        }
+
+    </style>
+</head>
+<body id="body">
+    <div id="jogador"></div>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            const jogador = document.getElementById("jogador");
+            const x = jogador.offsetLeft;
+            const y = jogador.offsetTop;
+            const incremento = 50;
+            const larguraJogador = jogador.offsetWidth;
+            const alturaJogador = jogador.offsetHeight;
+            const larguraTela = window.innerWidth;
+            const alturaTela = window.innerHeight;
+
+            if (event.key === "ArrowRight") {
+                if(x+incremento > larguraTela - larguraJogador){
+                    jogador.style.left = larguraTela - larguraJogador + 'px'
+                }else{
+                    jogador.style.left = x + incremento + 'px'
+                }
+            }
+            if (event.key === "ArrowLeft") {
+                if(x-incremento <0){
+                    jogador.style.left = "0px"
+                }else{
+                    jogador.style.left = x - incremento + "px";
+                }
+                
+            }
+            if (event.key === "ArrowDown") {
+                jogador.style.top = Math.min(y + incremento, alturaTela - alturaJogador) + "px";
+            }
+            if (event.key === "ArrowUp") {
+                jogador.style.top = Math.max(y - incremento, 0) + "px";
+            }
+        });
+    </script> 
+     
+</body>
+</html>
